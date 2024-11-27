@@ -26,7 +26,6 @@ public class JobController {
 
     @PostMapping("/jobs")
     public ResponseEntity<String> createJob(@RequestBody Job job){
-        job.setId(nextId++);
         jobService.createJob(job);
         return new ResponseEntity<>("Job added successfully", HttpStatus.CREATED);
     }
